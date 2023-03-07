@@ -1,0 +1,68 @@
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<h1> 
+ Car Prize Prediction
+</h1>
+
+
+<form method="POST" action="predict"> 
+    {% csrf_token %}
+
+    <br> 
+    <label for="seller_type"> Seller Type : &ensp; </label> <tr>
+        <select name="seller_type" id="seller_type">
+            <option value=1>Individual</option>
+            <option value=0>Dealer</option>
+            <option value=2>Trustmark Dealer</option>
+        </select>
+        <br>  <br> 
+
+    <label for="fuel_type"> Fuel Type : &ensp; </label> <tr>
+        <select name="fuel_type" id="fuel_type">
+            <option value=1>Diesel</option>
+            <option value=4>Petrol</option>
+            <option value=0>CNG</option>
+            <option value=3>LPG</option>
+            <option value=2>Electric</option>
+        </select>
+        <br> <br> 
+    
+    <label for="transmission_type"> Transmission Type : &ensp; </label> <tr>
+        <select name="transmission_type" id="transmission_type">
+            <option value=1>Manual</option>
+            <option value=0>Automatic</option>
+        </select>
+        <br>  <br> 
+    
+    <label for="owner_type"> Owner Type : &ensp; </label> <tr>
+        <select name="owner_type" id="owner_type">
+            <option value=0>First Owner</option>
+            <option value=1>Second Owner</option>
+            <option value=2>Third Owner</option>
+        </select>
+        <br>  <br> 
+
+    <label for="km_driven"> KM Driven (upto 1200K) : &ensp;</label>
+    <input type="number" id="km_driven" name="km_driven" min="0" max="1200">
+        <br>  <br>
+    
+    <label for="mileage"> Mileage (5-35 KM) : &ensp;</label>
+    <input type="number" id="mileage" name="mileage" min="5" max="45">
+        <br>  <br>
+    
+    <label for="engine"> Engine (600-6000 CC) : &ensp;</label>
+    <input type="number" id="engine" name="engine" min="600" max="7000">
+    <br>  <br>
+
+    <label for="max_power"> Max Power (30-700 HP) : &ensp;</label>
+    <input type="number" id="max_power" name="max_power" min="30" max="700">
+        <br>  <br>
+
+    <label for="seats"> Seats (2-14) : &ensp;</label>
+    <input type="number" id="seats" name="seats" min="2" max="14">
+        <br>  <br>   <br> 
+    
+    <input type = 'submit'/>
+</form>
